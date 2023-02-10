@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = ({ env }) => ({
   connection: {
-    client: 'mysql',
+    client: 'postgres',
     connection: {
-      host: env('DATABASE_HOST', '127.0.0.1'),
+      host: env('DATABASE_HOST', 'app-ea10d659-4217-48f7-8ff6-e05e5048842e-do-user-13544363-0.b.db.ondigitalocean.com'),
       port: env.int('DATABASE_PORT', 3306),
       database: env('DATABASE_NAME', 'strapi'),
       user: env('DATABASE_USERNAME', 'strapi'),
