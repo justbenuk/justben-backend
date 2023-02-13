@@ -14,7 +14,7 @@ module.exports = ( { env } ) => {
     return {
       host: env( 'HOST', '0.0.0.0' ),
       port: env.int( 'PORT', 1337 ),
-      url: 'https://justben.uk/cp/admin',
+      url: 'https://justben.uk/cp/',
       app: {
         keys: env.array( 'APP_KEYS' ),
       },
