@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,48 +22,33 @@
     "brief": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
-    },
     "github": {
       "type": "string"
     },
     "preview": {
       "type": "string"
     },
-    "mobile": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "tablet": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "desktop": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "current": {
       "type": "boolean",
       "default": false
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "desktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
