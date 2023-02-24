@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "projects",
+  "collectionName": "blogs",
   "info": {
-    "singularName": "project",
-    "pluralName": "projects",
-    "displayName": "Project",
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
     "description": ""
   },
   "options": {
@@ -15,23 +15,6 @@
     "title": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "brief": {
-      "type": "string"
-    },
-    "github": {
-      "type": "string"
-    },
-    "preview": {
-      "type": "string"
-    },
-    "current": {
-      "type": "boolean",
-      "default": false
-    },
     "content": {
       "type": "customField",
       "options": {
@@ -39,7 +22,11 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "desktop": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -50,11 +37,16 @@
         "audios"
       ]
     },
-    "category": {
+    "blogs": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::category.category",
-      "inversedBy": "projects"
+      "mappedBy": "blog"
+    },
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
     }
   }
 }
